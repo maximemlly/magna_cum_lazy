@@ -1,0 +1,21 @@
+<main>
+    <h2>
+        <?php echo $pageTitle; ?>
+    </h2>
+    <section id="main-section">
+        <p class="page-content">
+            <?php echo $pageContent; ?>
+        </p>
+        <ul>
+            <?php     for($i = 0; $i < count($choice); $i++) 
+                { 
+            ?>
+                <li>
+                    <a href='<?php echo $choice[$i]["link"] ?>'> <?php echo $choice[$i]["pick"]; ?> </a>
+                </li> 
+            <?php 
+                } 
+            ?>
+
+        </ul>
+</main>

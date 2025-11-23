@@ -1,0 +1,37 @@
+if(isset($_GET["page_"]))
+{
+    $pick = $_GET["page_"];
+
+    if($pick === "")
+    {
+        $pageTitle = "";
+        $pageContent = "";
+
+        $choice = [
+            [
+                "pick" => "",
+                "link" => ""
+            ],
+            [
+                "pick" => "",
+                "link" => ""
+            ]
+        ];
+    }
+    else if($pick === "")
+    {
+        $pageTitle = "";
+        $pageContent = "";
+
+        $choice = [
+            [
+                "pick" => "",
+                "link" => ""
+            ],
+            [
+                "pick" => "",
+                "link" => ""
+            ]
+        ];
+    }
+}
