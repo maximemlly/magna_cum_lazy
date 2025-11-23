@@ -109,7 +109,7 @@ if(isset($_GET["page_3"]))
     if($pick === "call")
     {
         $pageTitle = "Vous choisissez d'appeler Emery à la rescousse";
-        $pageContent = "Emery, se croyant le GOAT, vous montre son projet et vous explique comment vous y prendre.<br>
+        $pageContent = "Emery, décidément le GOAT, vous montre son projet et vous explique comment vous y prendre.<br>
         Son projet paraît si bien et le vôtre est mauvais, alors il vous vient l'idée de complètement copier sur lui.<br>
         Que faites-vous ?";
 
