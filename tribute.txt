@@ -1,0 +1,7 @@
+Différentes aides pour ce projet :
+
+Gemini : Titre du jeu et style.css complet, étant donné que ça ne fait pas partie du barème
+
+Copilot : Correction des éventuelles fautes de frappe
+
+Emery : Aide quasi complète dans l'explication de la structuration du projet. Merci bg <3

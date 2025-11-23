@@ -1,56 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* --- RESET & FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap');
 
-html {
-    font-size: 18px;
+:root {
+    --bg-color: #0d1117;        /* Fond sombre */
+    --box-bg: #161b22;          /* Fond des blocs */
+    --border: #30363d;          /* Gris subtil */
+    --accent: #58a6ff;          /* Bleu (Titres) */
+    --text: #c9d1d9;            /* Texte gris clair */
+    --green: #2ea043;           /* Vert (Validation/Actions) */
+    --font-stack: 'Fira Code', monospace; /* Police Code */
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
-    display: grid;
+    background-color: var(--bg-color);
+    color: var(--text);
+    font-family: var(--font-stack);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* --- HEADER (Optionnel, style minimaliste) --- */
+header {
+    width: 100%;
+    background: var(--box-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 1.2rem;
+    color: var(--green);
+    margin: 0;
+}
+
+/* --- MAIN CONTAINER --- */
+main {
+    width: 90%;
+    max-width: 800px; /* Largeur lecture confortable */
+    padding-bottom: 50px;
+}
+
+/* --- LA CASE "HISTOIRE" (Titre + Texte) --- */
+/* On simule une fenêtre unique pour le H2 et le P */
+main h2 {
+    background-color: var(--box-bg);
+    border: 1px solid var(--border);
+    border-bottom: none; /* Colle au bloc du dessous */
+    padding: 15px 20px;
+    margin: 0;
+    border-radius: 6px 6px 0 0;
+    color: var(--accent);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Petit rond rouge/jaune/vert style Mac OS avant le titre */
+main h2::before {
+    content: "● ● ●";
+    color: #484f58;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-right: 15px;
+}
+
+section#main-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Le texte de l'histoire */
+.page-content {
+    background-color: var(--box-bg);
+    border: 1px solid var(--border);
+    border-top: 1px dashed var(--border); /* Séparation subtile avec le titre */
+    padding: 25px;
+    margin: 0 0 30px 0; /* Espace avant les choix */
+    border-radius: 0 0 6px 6px;
+    font-size: 1rem;
+}
+
+/* --- LES CHOIX (Boutons) --- */
+ul {
+    list-style: none;
     padding: 0;
     margin: 0;
-    grid-template-rows: 15vh 75vh 10vh;
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espace entre les boutons */
 }
 
-body > header {
-    display: grid;
-    background-color: #422208;
-    color: rgb(220, 167, 20);
-    align-items: center;
-    justify-content: center;
+/* Le style des liens "blocs" */
+ul li a {
+    display: block;
+    background-color: transparent;
+    border: 1px solid var(--border);
+    color: var(--green);
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    position: relative;
 }
 
-body > header > h1 {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.5rem;
+/* Ajout d'un chevron > devant les choix */
+ul li a::before {
+    content: ">_ ";
+    color: var(--text);
+    margin-right: 10px;
 }
 
-body > main {
-    display: grid;
-    grid-template-rows: 15vh 60vh;
-    background-image: url("../img/bg.avif");
-    background-repeat: no-repeat;
-    color:#0a090c;
+/* Effet au survol */
+ul li a:hover {
+    background-color: var(--border);
+    border-color: var(--green);
+    color: #fff;
+    transform: translateX(5px); /* Décalage léger vers la droite */
+    box-shadow: 0 0 10px rgba(46, 160, 67, 0.2); /* Lueur verte */
 }
 
-body > main > h2 {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.1rem;
-}
-
-body > footer {
-    display: grid;
-    background-color: #422208;
-    color: rgb(220, 167, 20);
-    align-items: center;
-    justify-content: center;
+/* --- FOOTER --- */
+footer {
+    margin-top: auto;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #484f58;
 }
